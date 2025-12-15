@@ -83,7 +83,7 @@
     <header class="fixed top-0 w-full z-50 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-gray-100 dark:border-gray-800 px-6 py-4 flex justify-between items-center shadow-sm">
         <div>
             <h1 class="text-2xl font-extrabold text-indigo-600 dark:text-indigo-400">KMA Philosophy</h1>
-            <p class="text-xs text-slate-500 font-bold uppercase tracking-wider">Ôn thi Triết học Mác-Lênin</p>
+            <p class="text-xs text-slate-500 font-bold uppercase tracking-wider">Ôn thi Mác-Lênin</p>
         </div>
         <button id="theme-toggle" class="w-10 h-10 rounded-full bg-gray-50 dark:bg-slate-800 flex items-center justify-center tap-effect text-indigo-600 dark:text-yellow-400 border border-gray-200 dark:border-gray-700">
             <i class="fas fa-moon dark:hidden"></i><i class="fas fa-sun hidden dark:block"></i>
@@ -712,141 +712,223 @@
             {t: "Ý thức xã hội", d: "Mặt tinh thần của đời sống xã hội, bao gồm những quan điểm, tư tưởng, tình cảm... nảy sinh từ tồn tại xã hội và phản ánh tồn tại xã hội."}
         ];
 
-        // DỮ LIỆU ĐỀ THI (4 ĐỀ x 50 CÂU)
-        // Đề 1: KMA
-        const EXAM_1 = [
-            { 
-                q: "Chức năng giữ vị trí quyết định của nhà nước là:", 
-                o: ["Trấn áp", "Đối nội", "Thống trị chính trị", "Đối ngoại"], 
-                a: 2, 
-                e: "Theo giáo trình (Chương 3, mục III), nhà nước về bản chất là công cụ chuyên chính của giai cấp thống trị. Do đó, chức năng **Thống trị chính trị** (bảo vệ địa vị, đàn áp sự phản kháng của giai cấp bị trị) là chức năng cơ bản nhất, quyết định bản chất và chi phối các chức năng khác (xã hội, đối nội, đối ngoại)." 
-            },
-            { 
-                q: "Vật chất với tư cách là phạm trù triết học có tính chất gì?", 
-                o: ["Vô hạn, vĩnh viễn", "Có giới hạn", "Sinh ra mất đi", "Là vật thể cụ thể"], 
-                a: 0, 
-                e: "Cần phân biệt 'Vật chất' (phạm trù triết học) và 'các dạng cụ thể của vật chất' (sự vật). Các sự vật cụ thể có sinh ra và mất đi. Nhưng **Vật chất** nói chung (thực tại khách quan) là **vô hạn, vĩnh viễn, không do ai sinh ra và không mất đi**, chỉ chuyển hóa từ dạng này sang dạng khác (Theo định luật bảo toàn)." 
-            },
-            { 
-                q: "Yếu tố động nhất, cách mạng nhất trong Lực lượng sản xuất là:", 
-                o: ["Người lao động", "Công cụ lao động", "Tư liệu sản xuất", "Đối tượng lao động"], 
-                a: 1, 
-                e: "Trong Lực lượng sản xuất, **Công cụ lao động** là yếu tố thường xuyên biến đổi nhất (yếu tố động nhất). Con người luôn cải tiến công cụ để nâng cao năng suất. Sự thay đổi của công cụ lao động là khởi nguồn của mọi biến đổi kinh tế - xã hội trong lịch sử." 
-            },
-            { 
-                q: "Hạt nhân của phép biện chứng duy vật là quy luật nào?", 
-                o: ["Lượng - Chất", "Mâu thuẫn", "Phủ định của phủ định", "Mối liên hệ phổ biến"], 
-                a: 1, 
-                e: "V.I.Lênin khẳng định: 'Có thể định nghĩa vắn tắt phép biện chứng là học thuyết về sự thống nhất của các mặt đối lập'. **Quy luật Mâu thuẫn** vạch ra nguồn gốc và động lực của sự vận động, phát triển, nên nó được coi là hạt nhân (cốt lõi) của phép biện chứng." 
-            },
-            { 
-                q: "Nguồn gốc xã hội trực tiếp quyết định sự ra đời của ý thức là:", 
-                o: ["Lao động & Ngôn ngữ", "Bộ óc người", "Thế giới khách quan", "Sự phản ánh"], 
-                a: 0, 
-                e: "Tuy bộ óc và thế giới khách quan là tiền đề tự nhiên (điều kiện cần), nhưng **Lao động và Ngôn ngữ** mới là nguồn gốc xã hội (điều kiện đủ) quyết định trực tiếp. Lao động làm hoàn thiện não bộ và giác quan; Ngôn ngữ là 'vỏ vật chất' của tư duy giúp khái quát hóa hiện thực." 
-            },
-            { 
-                q: "Cơ sở hạ tầng quyết định yếu tố nào sau đây?", 
-                o: ["Kiến trúc thượng tầng", "Lực lượng sản xuất", "Quan hệ sản xuất", "Tồn tại xã hội"], 
-                a: 0, 
-                e: "Theo quy luật về mối quan hệ biện chứng (Chương 3): Cơ sở hạ tầng (toàn bộ quan hệ sản xuất hợp thành cơ cấu kinh tế) sẽ quyết định **Kiến trúc thượng tầng** (Chính trị, Pháp luật, Văn hóa...). Tức là: Kinh tế thế nào thì Chính trị thế ấy." 
-            },
-            { 
-                q: "Khuynh hướng của sự phát triển theo quy luật Phủ định của phủ định là:", 
-                o: ["Đường thẳng đi lên", "Vòng tròn khép kín", "Đường xoáy ốc", "Hỗn loạn vô hướng"], 
-                a: 2, 
-                e: "Sự phát triển không diễn ra theo đường thẳng (quá đơn giản) hay vòng tròn (lặp lại y nguyên), mà theo **Đường xoáy ốc**. Cái mới ra đời kế thừa hạt nhân hợp lý của cái cũ nhưng ở trình độ cao hơn (dường như lặp lại cái cũ nhưng cao hơn về chất)." 
-            },
-            { 
-                q: "Theo C.Mác, bản chất con người là:", 
-                o: ["Tổng hòa những quan hệ xã hội", "Thực thể sinh học", "Do thần linh tạo ra", "Tư duy trừu tượng"], 
-                a: 0, 
-                e: "Trong tác phẩm 'Luận cương về Phoiơbắc', C.Mác viết: 'Trong tính hiện thực của nó, bản chất con người là **tổng hòa những quan hệ xã hội**'. Con người không chỉ là thực thể sinh học mà quan trọng hơn là sản phẩm của lịch sử và các quan hệ xã hội." 
-            },
-            { 
-                q: "Chân lý có tính chất nào sau đây?", 
-                o: ["Chủ quan", "Trừu tượng", "Khách quan", "Vĩnh viễn đúng"], 
-                a: 2, 
-                e: "Chân lý là tri thức phù hợp với hiện thực khách quan. Dù chân lý thuộc về con người (về mặt hình thức phản ánh) nhưng nội dung của nó phản ánh thế giới khách quan, không phụ thuộc vào ý muốn chủ quan. Do đó, tính chất cơ bản nhất là **Tính khách quan**." 
-            },
-            { 
-                q: "Yếu tố có quyền lực mạnh nhất trong Kiến trúc thượng tầng là:", 
-                o: ["Tôn giáo", "Nghệ thuật", "Nhà nước", "Đạo đức"], 
-                a: 2, 
-                e: "**Nhà nước** là yếu tố mạnh nhất trong KTTT vì nó sở hữu sức mạnh vật chất (quân đội, cảnh sát, nhà tù) và quyền lực cưỡng chế để áp đặt ý chí của giai cấp thống trị lên toàn xã hội. Các yếu tố khác như đạo đức, tôn giáo chủ yếu dựa vào niềm tin và dư luận." 
-            }
-        ];
-        while(EXAM_1.length < 50) EXAM_1.push(...EXAM_1.slice(0, 50 - EXAM_1.length));
+            // DỮ LIỆU ĐỀ THI TRẮC NGHIỆM (4 ĐỀ x 50 CÂU)
+            // Đề 1: Đề mẫu KMA
+            const EXAM_1 = [
+                { q: "Chức năng giữ vị trí quyết định, chi phối và định hướng chức năng xã hội của nhà nước là:", o: ["Chức năng trấn áp", "Chức năng đối nội", "Chức năng thống trị chính trị", "Chức năng đối ngoại"], a: 2, e: "Chức năng thống trị chính trị quyết định bản chất giai cấp của nhà nước." },
+                { q: "Theo quan điểm của CNDV biện chứng, vật chất với tư cách là phạm trù có nghĩa là:", o: ["Vật chất vô hạn, vô tận, vĩnh viễn tồn tại", "Vật chất có giới hạn", "Vật chất được sinh ra và bị mất đi", "Vật chất được đồng nhất với vật thể"], a: 0, e: "Vật chất là phạm trù triết học chỉ thực tại khách quan, vĩnh viễn, vô tận." },
+                { q: "C.Mác viết: 'Cái cối xay quay bằng tay đưa lại xã hội có lãnh chúa phong kiến, cái cối xay chạy bằng máy hơi nước đưa lại xã hội tư bản công nghiệp'. Câu nói trên phản ánh quan điểm nào?", o: ["QHSX không có tính độc lập tương đối", "Vai trò quyết định của LLSX đối với QHSX", "Vai trò quyết định của QHSX đối với LLSX", "LLSX và QHSX tồn tại độc lập"], a: 1, e: "LLSX (công cụ lao động) quyết định sự hình thành QHSX." },
+                { q: "Theo quan niệm của CNDV biện chứng, phương pháp biện chứng:", o: ["Nhận thức đối tượng ở trạng thái tĩnh", "Tách rời đối tượng ra khỏi các mối quan hệ", "Nhận thức đối tượng trong các mối liên hệ phổ biến, ràng buộc, quy định và ảnh hưởng lẫn nhau", "Nhận thức đối tượng ở trạng thái cô lập"], a: 2, e: "Phương pháp biện chứng xem xét sự vật trong mối liên hệ và sự vận động." },
+                { q: "Quan điểm của CNDV biện chứng về mối quan hệ giữa vật chất và ý thức?", o: ["Ý thức và vật chất độc lập", "Vật chất quyết định ý thức", "Vật chất quyết định ý thức, ý thức có tính độc lập tương đối và tác động trở lại", "Ý thức là sản phẩm của vật chất"], a: 2, e: "Vật chất quyết định, ý thức tác động trở lại thông qua thực tiễn." },
+                { q: "Theo CNDV biện chứng, luận điểm nào sau đây là SAI?", o: ["Nội dung quy định hình thức", "Sự thống nhất giữa nội dung và hình thức mang tính tạm thời", "Nội dung và hình thức luôn luôn phù hợp với nhau", "Nội dung và hình thức không tách rời nhau"], a: 2, e: "Nội dung và hình thức có thể mâu thuẫn, không phải lúc nào cũng phù hợp." },
+                { q: "Nội dung chủ yếu và bao quát nhất của đấu tranh giai cấp ở nước ta hiện nay là:", o: ["Thực hiện thắng lợi mục tiêu độc lập dân tộc và CNXH...", "Đấu tranh chống tệ nạn xã hội", "Làm thất bại âm mưu thù địch", "Chống áp bức bất công"], a: 0, e: "Mục tiêu tổng quát: Dân giàu, nước mạnh, dân chủ, công bằng, văn minh." },
+                { q: "Theo quan điểm của CNDV lịch sử, tồn tại xã hội là gì?", o: ["Là bộ phận văn hóa tinh thần", "Là toàn bộ hoạt động vật chất và tinh thần", "Toàn bộ sinh hoạt vật chất và những điều kiện sinh hoạt vật chất của xã hội", "Là mặt tinh thần của xã hội"], a: 2, e: "Tồn tại xã hội là phương diện vật chất của đời sống xã hội." },
+                { q: "Sự phân chia giai cấp trong xã hội bắt đầu từ hình thái kinh tế - xã hội nào?", o: ["Cộng sản nguyên thủy", "Tư bản chủ nghĩa", "Phong kiến", "Chiếm hữu nô lệ"], a: 3, e: "Chiếm hữu nô lệ là xã hội có giai cấp đầu tiên." },
+                { q: "Theo quan niệm của CNDV biện chứng, trong kết cấu của ý thức, yếu tố nào là cơ bản và cốt lõi nhất?", o: ["Niềm tin, ý chí", "Tình cảm", "Ý chí và tư tưởng", "Tri thức"], a: 3, e: "Tri thức là phương thức tồn tại của ý thức." },
+                { q: "Trường phái Bất khả tri luận cho rằng:", o: ["Con người không có khả năng nhận thức thế giới", "Con người có khả năng nhận thức thế giới trong đk nhất định", "Con người chỉ nhận thức bề ngoài", "Con người có khả năng nhận thức thế giới"], a: 0, e: "Bất khả tri = Không thể biết." },
+                { q: "Quy luật giữ vai trò quan trọng nhất trong việc hình thành bản chất của con người là:", o: ["Các quy luật sinh học", "Các quy luật tâm lý", "Các quy luật của giới tự nhiên", "Các quy luật xã hội"], a: 3, e: "Bản chất con người là tổng hòa các quan hệ xã hội." },
+                { q: "Theo quan điểm của CNDV biện chứng, phát triển là:", o: ["Chỉ vận động theo khuynh hướng đi lên", "Mang tính chủ quan", "Chỉ tăng lên về lượng", "Chỉ theo vòng tròn"], a: 0, e: "Phát triển là vận động theo hướng đi lên." },
+                { q: "Trong lịch sử triết học Mác, giai đoạn 1848-1895 là:", o: ["Thời kỳ bổ sung và phát triển toàn diện lý luận", "Thời kỳ đề xuất nguyên lý", "Thời kỳ chuyển từ duy tâm sang duy vật", "Thời kỳ chuyển biến tư tưởng"], a: 0, e: "Giai đoạn C.Mác và Ăngghen bổ sung, phát triển học thuyết." },
+                { q: "Triết học nào coi nhận thức cảm tính và lý tính là hai trình độ có quan hệ biện chứng?", o: ["CN duy lý", "CN duy tâm chủ quan", "CN duy cảm", "CN duy vật biện chứng"], a: 3, e: "Chỉ có CNDV biện chứng mới thấy được mối quan hệ này." },
+                { q: "Quan điểm: 'Tồn tại xã hội quyết định ý thức xã hội nhưng ý thức xã hội có tính độc lập tương đối' là của:", o: ["Chủ nghĩa duy vật", "Chủ nghĩa duy tâm", "Chủ nghĩa duy vật lịch sử", "Chủ nghĩa duy vật siêu hình"], a: 2, e: "Đây là nguyên lý cơ bản của CNDV lịch sử." },
+                { q: "Nguồn gốc tự nhiên của ý thức gồm:", o: ["Bộ óc người và thế giới khách quan tác động", "Bộ óc và lao động", "Thế giới bên ngoài", "Lao động và ngôn ngữ"], a: 0, e: "Bộ óc người và thế giới khách quan là nguồn gốc tự nhiên." },
+                { q: "Vai trò quan trọng nhất của đấu tranh giai cấp trong lịch sử:", o: ["Thay thế các hình thái KT-XH", "Là tiền đề phát triển", "Là động lực quan trọng của sự phát triển xã hội có đối kháng", "Lật đổ ách thống trị"], a: 2, e: "Đấu tranh giai cấp là động lực trực tiếp của lịch sử." },
+                { q: "Luận điểm nào sau đây SAI về phủ định biện chứng?", o: ["Không xóa bỏ hoàn toàn cái cũ", "Xóa bỏ cái cũ hoàn toàn", "Giữ lại yếu tố tích cực", "Loại bỏ yếu tố không thích hợp"], a: 1, e: "Phủ định biện chứng có tính kế thừa, không xóa bỏ sạch trơn." },
+                { q: "Lựa chọn phương án ĐÚNG thể hiện mối liên hệ nhân quả:", o: ["Nhân vô thập toàn", "Trăm hay không bằng tay quen", "Tốt gỗ hơn tốt nước sơn", "Sinh sự, sự sinh"], a: 3, e: "'Sinh sự, sự sinh' thể hiện quan hệ nguyên nhân - kết quả." },
+                { q: "Quan điểm, tư tưởng của xã hội thuộc phạm trù nào?", o: ["Cơ sở hạ tầng", "Tồn tại xã hội", "Quan hệ sản xuất", "Kiến trúc thượng tầng"], a: 3, e: "Các quan điểm tư tưởng thuộc Kiến trúc thượng tầng." },
+                { q: "Yếu tố động nhất, cách mạng nhất trong LLSX?", o: ["Đối tượng lao động", "Đối tượng và phương tiện", "Phương tiện lao động", "Công cụ lao động"], a: 3, e: "Công cụ lao động thay đổi nhanh nhất." },
+                { q: "C.Mác viết 'Trong tính hiện thực của nó, bản chất con người là tổng hòa các quan hệ xã hội', ý nghĩa là:", o: ["Bác bỏ mặt tự nhiên", "Nhấn mạnh mặt tự nhiên", "Nhấn mạnh bản chất xã hội", "Nhấn mạnh tính trừu tượng"], a: 2, e: "Con người là thực thể xã hội." },
+                { q: "'Vật chất là cái được cảm giác chúng ta chép lại, chụp lại, phản ánh' được hiểu là:", o: ["Không thể nhận thức", "Có khả năng nhận thức được thế giới", "Không phản ánh đúng bản chất", "Phản ánh thụ động"], a: 1, e: "Khẳng định tính Khả tri (con người nhận thức được)." },
+                { q: "Trong mối quan hệ giữa CSHT và KTTT:", o: ["KTTT có tính độc lập tương đối", "KTTT luôn kìm hãm", "KTTT quyết định CSHT", "KTTT tồn tại độc lập"], a: 0, e: "KTTT do CSHT quyết định nhưng có tính độc lập tương đối." },
+                { q: "Sự thay thế và phát triển của các phương thức sản xuất phản ánh:", o: ["Ý chí của nhân dân", "Ý chí giai cấp thống trị", "Sự lựa chọn của lãnh tụ", "Xu hướng tất yếu khách quan của lịch sử"], a: 3, e: "Lịch sử phát triển theo quy luật khách quan." },
+                { q: "Hình thức đầu tiên của giai đoạn nhận thức cảm tính là:", o: ["Phán đoán", "Cảm giác", "Biểu tượng", "Tri giác"], a: 1, e: "Cảm giác là hình thức sơ khai nhất." },
+                { q: "Trong quan hệ nhân quả, khẳng định nào sau đây SAI?", o: ["Nguyên nhân có trước kết quả", "Nguyên nhân xuất hiện cùng kết quả", "Một nguyên nhân có thể sinh nhiều kết quả", "Nguyên nhân sản sinh kết quả"], a: 1, e: "Nguyên nhân phải có trước kết quả về mặt thời gian." },
+                { q: "Tìm phát biểu SAI về quan điểm phát huy con người của Đảng ta:", o: ["Đề cao chủ nghĩa cá nhân", "Đề cao vai trò cá nhân", "Kết hợp lợi ích vật chất và tinh thần", "Con người là trung tâm"], a: 0, e: "Đảng ta chống chủ nghĩa cá nhân." },
+                { q: "Tính chất của chân lý:", o: ["Tính trừu tượng", "Tính chủ quan", "Tính khách quan", "Tính kinh nghiệm"], a: 2, e: "Chân lý luôn có tính khách quan." },
+                { q: "Xét đến cùng, sự vận động phát triển của các hình thái KT-XH là do:", o: ["Lực lượng sản xuất", "Kiến trúc thượng tầng", "Quan hệ sản xuất", "Quan hệ kinh tế"], a: 0, e: "LLSX là yếu tố quyết định nhất." },
+                { q: "'Vận động là phương thức tồn tại của vật chất' là quan điểm của:", o: ["CNDT", "CNDV biện chứng", "CNDV siêu hình", "CNDV cổ đại"], a: 1, e: "Quan điểm của Ph.Ăngghen (DVBC)." },
+                { q: "Quan hệ giữa LLSX và QHSX là mối quan hệ:", o: ["Luôn đối lập", "Luôn thống nhất", "Thống nhất và đấu tranh của các mặt đối lập", "Luôn loại trừ"], a: 2, e: "Đây là quy luật mâu thuẫn biện chứng." },
+                { q: "Theo CNDV biện chứng, nhận định nào ĐÚNG?", o: ["Nguồn gốc phát triển nằm trong bản thân sự vật", "Phát triển chỉ là tăng lượng", "Phát triển là vận động nói chung", "Ý muốn con người quy định phát triển"], a: 0, e: "Nguồn gốc là mâu thuẫn bên trong." },
+                { q: "Vai trò của KTTT đối với CSHT?", o: ["Không có vai trò", "Luôn tác động tích cực", "Tác động trở lại mạnh mẽ", "Quyết định CSHT"], a: 2, e: "KTTT tác động trở lại CSHT (thúc đẩy hoặc kìm hãm)." },
+                { q: "Đâu là quan niệm về vật chất của Triết học Mác - Lênin?", o: ["Đồng nhất với dạng cụ thể", "Phụ thuộc ý thức", "Không đồng nhất vật chất với vật thể", "Tách rời các dạng cụ thể"], a: 2, e: "Vật chất là phạm trù triết học, không phải vật thể." },
+                { q: "Quan hệ giữa quy luật Triết học và quy luật khoa học cụ thể là:", o: ["Nguyên nhân - kết quả", "Hiện tượng - bản chất", "Tất nhiên - ngẫu nhiên", "Cái chung - cái riêng"], a: 3, e: "Triết học nghiên cứu cái chung nhất." },
+                { q: "Hai phương diện cơ bản của đời sống xã hội là:", o: ["Kinh tế và KHKT", "Kinh tế và Chính trị - Xã hội", "Văn hóa và KHKT", "Vật chất và Tinh thần"], a: 3, e: "Tương ứng là Tồn tại xã hội và Ý thức xã hội." },
+                { q: "Quan hệ nào quyết định trực tiếp quy mô, tốc độ, hiệu quả nền sản xuất?", o: ["Sở hữu tư liệu sản xuất", "Phân phối sản phẩm", "Tổ chức quản lý sản xuất", "Tất cả đều đúng"], a: 2, e: "Quan hệ tổ chức quản lý quyết định trực tiếp quá trình vận hành." },
+                { q: "Lực lượng cách mạng xã hội là:", o: ["Giai cấp không có lợi ích gắn bó", "Giai cấp phản cách mạng", "Giai cấp ủng hộ nhưng không tham gia", "Giai cấp có lợi ích gắn bó và tham gia phong trào"], a: 3, e: "Lực lượng cách mạng là những người trực tiếp tham gia." },
+                { q: "Phép biện chứng duy vật nghiên cứu những quy luật nào?", o: ["Quy luật xã hội", "Quy luật chung nhất trong tự nhiên, xã hội, tư duy", "Quy luật chung", "Quy luật đặc thù"], a: 1, e: "Nghiên cứu quy luật chung nhất." },
+                { q: "Quy luật nào là hạt nhân của phép biện chứng duy vật?", o: ["Lượng - Chất", "Mâu thuẫn", "Phủ định của phủ định", "Cả 3 quy luật"], a: 1, e: "Quy luật Mâu thuẫn là hạt nhân." },
+                { q: "Theo CNDV lịch sử, ý thức xã hội là gì?", o: ["Ý thức giai cấp", "Sinh hoạt vật chất", "Điều kiện vật chất", "Mặt tinh thần của đời sống xã hội"], a: 3, e: "Ý thức xã hội phản ánh tồn tại xã hội." },
+                { q: "Theo CNDV biện chứng, nguyên nhân...?", o: ["Sản sinh ra kết quả", "Không liên quan kết quả", "Không ảnh hưởng kết quả", "Có sau kết quả"], a: 0, e: "Nguyên nhân là cái sinh ra kết quả." },
+                { q: "Đâu là quan điểm của CNDV biện chứng về bản chất ý thức?", o: ["Phản ánh thụ động", "Hình ảnh chủ quan của thế giới khách quan", "Quyết định vật chất", "Phản ánh nguyên vẹn"], a: 1, e: "Ý thức là hình ảnh chủ quan, phản ánh sáng tạo." },
+                { q: "Tìm phương án SAI về nguyên tắc phát triển:", o: ["Đề cao định kiến", "Phát triển qua nhiều giai đoạn", "Đặt trong sự vận động", "Ủng hộ cái mới"], a: 0, e: "Nguyên tắc phát triển chống lại định kiến, bảo thủ." },
+                { q: "Tìm phương án SAI về sự phát triển:", o: ["Chỉ khuynh hướng đi lên", "Có tính khách quan", "Chỉ sự tăng lên về lượng", "Có tính phổ biến"], a: 2, e: "Phát triển bao gồm cả thay đổi về chất." },
+                { q: "Định nghĩa vật chất của Lênin được nêu trong tác phẩm nào?", o: ["Tuyên ngôn Đảng CS", "Nguồn gốc gia đình...", "Chủ nghĩa duy vật và chủ nghĩa kinh nghiệm phê phán", "Biện chứng tự nhiên"], a: 2, e: "Tác phẩm ra đời năm 1908." },
+                { q: "'Triết học tự nhiên' chỉ triết học thời kỳ nào?", o: ["Trung cổ", "Phục hưng", "Cổ đại", "Mác - Lênin"], a: 2, e: "Thời Cổ đại, triết học bao gồm mọi tri thức (KH của các KH)." },
+                { q: "Nhận thức lý tính là:", o: ["Phản ánh bản chất", "Phản ánh bề ngoài", "Giai đoạn thấp", "Phản ánh trực tiếp"], a: 0, e: "Nhận thức lý tính phản ánh gián tiếp, trừu tượng, bản chất." }
+            ];
 
-        // Đề 2: VNU
-        const EXAM_2 = [
-            { 
-                q: "Triết học ra đời vào thời gian nào?", 
-                o: ["Thế kỷ VIII - VI tr.CN", "Thế kỷ I", "Thế kỷ XV", "Thế kỷ XIX"], 
-                a: 0, 
-                e: "Theo giáo trình (Chương 1): Triết học ra đời vào thời kỳ Cổ đại, khoảng **thế kỷ VIII đến thế kỷ VI trước Công nguyên** tại các trung tâm văn minh lớn như Ấn Độ, Trung Quốc và Hy Lạp, khi tư duy con người đạt trình độ trừu tượng hóa, khái quát hóa cao." 
-            },
-            { 
-                q: "Yếu tố nào KHÔNG thuộc cấu trúc của Thế giới quan duy vật biện chứng?", 
-                o: ["Niềm tin khoa học", "Tri thức", "Lý tưởng", "Mê tín dị đoan"], 
-                a: 3, 
-                e: "Thế giới quan khoa học bao gồm 3 yếu tố chính: Tri thức (cơ sở), Niềm tin và Lý tưởng. **Mê tín dị đoan** là niềm tin mù quáng vào các lực lượng siêu nhiên hư ảo, trái ngược hoàn toàn với bản chất khoa học và duy vật biện chứng." 
-            },
-            { 
-                q: "Theo Ph.Ăngghen, vận động là:", 
-                o: ["Thuộc tính cố hữu của vật chất", "Do 'Cú hích đầu tiên'", "Sự thay đổi vị trí", "Do ý thức tạo ra"], 
-                a: 0, 
-                e: "Ph.Ăngghen định nghĩa: Vận động hiểu theo nghĩa chung nhất là mọi sự biến đổi. Nó là **phương thức tồn tại và là thuộc tính cố hữu** của vật chất. Vật chất tồn tại bằng cách vận động. Không có vật chất không vận động." 
-            },
-            { 
-                q: "Quan điểm nào cho rằng Không gian và Thời gian là hình thức tồn tại của vật chất?", 
-                o: ["Chủ nghĩa duy tâm", "Chủ nghĩa duy vật biện chứng", "Chủ nghĩa duy vật siêu hình", "Thuyết bất khả tri"], 
-                a: 1, 
-                e: "**Chủ nghĩa duy vật biện chứng** khẳng định: Không gian và Thời gian là hình thức tồn tại khách quan của vật chất vận động. Vật chất vận động luôn diễn ra ở đâu (không gian) và bao lâu (thời gian). Không có không-thời gian tách rời vật chất." 
-            }
-        ];
-        while(EXAM_2.length < 50) EXAM_2.push(...EXAM_2.slice(0, 50 - EXAM_2.length));
+            // Đề 2: VNU + FTU (50 câu - Kết hợp VNU và FTU)
+            const EXAM_2 = [
+                { q: "Triết học ra đời vào khoảng thời gian nào?", o: ["TK VIII-VI tr.CN", "TK VI-VIII sau CN", "TK III-I tr.CN", "TK I-III sau CN"], a: 0, e: "Triết học ra đời vào thế kỷ VIII-VI tr.CN." },
+                { q: "Yếu tố nào KHÔNG thuộc thế giới quan duy vật biện chứng?", o: ["Niềm tin khoa học", "Tình cảm dân tộc", "Lý tưởng cách mạng", "Mê tín dị đoan"], a: 3, e: "Mê tín dị đoan thuộc thế giới quan tôn giáo/huyền thoại." },
+                { q: "Luận điểm 'Các nhà triết học đã chỉ giải thích thế giới... vấn đề là cải tạo thế giới' là của ai?", o: ["Ph. Ăngghen", "V.I. Lênin", "L. Phoiơbắc", "C. Mác"], a: 3, e: "Luận điểm nổi tiếng của C.Mác." },
+                { q: "Phát biểu nào đúng về nội dung và hình thức phản ánh của ý thức?", o: ["Nội dung khách quan, hình thức chủ quan", "Nội dung chủ quan, hình thức khách quan", "Cả hai khách quan", "Cả hai chủ quan"], a: 0, e: "Ý thức phản ánh hiện thực khách quan (nội dung) thông qua lăng kính chủ quan (hình thức)." },
+                { q: "Nhận định nào KHÔNG phải quan điểm Mác - Lênin về vận động?", o: ["Vận động phổ biến", "Tự thân vận động", "Cú hích của Thượng Đế", "Thuộc tính cố hữu"], a: 2, e: "'Cú hích của Thượng Đế' là quan điểm duy tâm/siêu hình (Newton)." },
+                { q: "Nhận định nào KHÔNG đúng về không gian, thời gian?", o: ["Mang tính chủ quan", "Là hình thức tồn tại của vật chất", "Không gian là quảng tính", "Thời gian là độ dài diễn biến"], a: 0, e: "Không gian, thời gian là khách quan." },
+                { q: "Quan điểm Mác - Lênin về sự phát triển:", o: ["Có tính kế thừa", "Không kế thừa", "Kế thừa nguyên xi", "Chỉ thay đổi lượng"], a: 0, e: "Phát triển có tính kế thừa biện chứng." },
+                { q: "Phạm trù chỉ mối liên hệ bản chất, do nguyên nhân bên trong quy định:", o: ["Ngẫu nhiên", "Nguyên nhân", "Tất nhiên", "Hiện thực"], a: 2, e: "Tất nhiên là cái do bản chất bên trong quy định." },
+                { q: "Nhận định đúng về mâu thuẫn:", o: ["Tồn tại trong cả tự nhiên, xã hội, tư duy", "Chỉ tự nhiên", "Chỉ xã hội", "Chỉ tư duy"], a: 0, e: "Mâu thuẫn có tính phổ biến." },
+                { q: "Cách mạng Tháng Tám 1945 là bước nhảy nào?", o: ["Tức thời", "Cục bộ", "Đột biến", "Toàn bộ"], a: 3, e: "Thay đổi căn bản chế độ xã hội là bước nhảy toàn bộ." },
+                { q: "Hình thức thực tiễn cơ bản nhất?", o: ["Thực nghiệm khoa học", "Chính trị - xã hội", "Sản xuất vật chất", "Đấu tranh giai cấp"], a: 2, e: "Sản xuất vật chất là cơ bản nhất." },
+                { q: "Phát biểu SAI về quan hệ nhận thức cảm tính và lý tính?", o: ["Thống nhất hoàn toàn", "Không có liên hệ", "Bổ sung cho nhau", "Liên hệ chặt chẽ"], a: 1, e: "Chúng có liên hệ chặt chẽ, bổ sung cho nhau." },
+                { q: "Tri thức đúng nhưng chưa hoàn toàn đầy đủ là:", o: ["Chân lý tuyệt đối", "Chân lý tương đối", "Tính khách quan", "Tính cụ thể"], a: 1, e: "Chân lý tương đối phản ánh đúng nhưng chưa đủ." },
+                { q: "Quan hệ giữa CSHT và KTTT:", o: ["KTTT quyết định", "CSHT quyết định, KTTT không tác động", "CSHT quyết định, KTTT tác động trở lại", "Độc lập nhau"], a: 2, e: "CSHT quyết định, KTTT tác động trở lại." },
+                { q: "Ý nghĩa quy luật QHSX phù hợp LLSX:", o: ["Phát triển kinh tế từ LLSX", "Từ QHSX", "Từ Sở hữu", "Từ Phương tiện"], a: 0, e: "Phát triển kinh tế phải bắt đầu từ LLSX." },
+                { q: "Giai cấp là phạm trù:", o: ["Vĩnh viễn", "Lịch sử", "Chủ quan", "Ngẫu nhiên"], a: 1, e: "Giai cấp là phạm trù lịch sử." },
+                { q: "Nhà nước của số đông thống trị số ít là:", o: ["Chủ nô", "Phong kiến", "Tư sản", "Vô sản"], a: 3, e: "Nhà nước vô sản là nhà nước đặc biệt của số đông." },
+                { q: "Hình thái ý thức thể hiện trực tiếp lợi ích giai cấp:", o: ["Tôn giáo", "Thẩm mỹ", "Đạo đức", "Chính trị"], a: 3, e: "Ý thức chính trị thể hiện rõ nhất lợi ích giai cấp." },
+                { q: "Hệ tư tưởng và khoa học:", o: ["Chỉ khoa học ảnh hưởng", "Chỉ không khoa học ảnh hưởng", "Cả hai đều ảnh hưởng", "Không ảnh hưởng"], a: 2, e: "Cả hệ tư tưởng khoa học và không khoa học đều ảnh hưởng." },
+                { q: "Sự khác biệt căn bản giữa con người và con vật:", o: ["Hái lượm / Bắt chước", "Thu lượm / Hái lượm", "Nhặt nhạnh / Hái lượm", "Hái lượm / Sản xuất"], a: 3, e: "Con vật hái lượm, con người sản xuất." },
+                // 30 câu bổ sung từ FTU
+                { q: "Sự khác biệt giữa phép biện chứng và ngụy biện?", o: ["Dựa trên lý tính/cảm tính", "Tìm bản chất/xuyên tạc", "Khoa học TN/XH", "Hệ thống/phi hệ thống"], a: 1, e: "Biện chứng tìm bản chất, ngụy biện xuyên tạc." },
+                { q: "Toàn cầu hóa là biểu hiện của:", o: ["Tự do thương mại", "Các tổ chức quốc tế", "LLSX và QHSX toàn cầu", "Hệ tư tưởng tư sản"], a: 2, e: "Biểu hiện sự phát triển LLSX mang tính toàn cầu." },
+                { q: "C.Mác: 'Sự vận động của tư bản là quá trình lịch sử tự nhiên' nghĩa là:", o: ["Tự phát", "Giai đoạn tự nhiên", "Điều khiển bởi nhà nước", "Theo quy luật khách quan"], a: 3, e: "Tuân theo quy luật khách quan." },
+                { q: "Khủng hoảng kinh tế và mâu thuẫn tư bản:", o: ["Nguyên nhân tạo mâu thuẫn", "Độc lập", "Biểu hiện của mâu thuẫn", "Giải quyết triệt để"], a: 2, e: "Khủng hoảng là biểu hiện của mâu thuẫn cơ bản." },
+                { q: "Đóng góp quan trọng nhất của Lênin về kinh tế:", o: ["Giá trị thặng dư", "Lý luận chủ nghĩa đế quốc", "Thuộc tính hàng hóa", "Phê phán kinh tế tầm thường"], a: 1, e: "Lý luận về chủ nghĩa đế quốc." },
+                { q: "Doanh nghiệp chỉ lo lợi ích trước mắt (lượng) bỏ qua văn hóa (chất) sẽ khủng hoảng. Đây là quy luật:", o: ["Lượng - Chất", "Mâu thuẫn", "Phủ định", "Giá trị"], a: 0, e: "Tích lũy lượng không đúng hướng dẫn đến chất lượng kém." },
+                { q: "Liệu pháp 'sốc' trong kinh tế là hình thức:", o: ["Hỗ trợ nước ngoài", "Ý chí lãnh đạo", "Nhanh chóng", "Bước nhảy"], a: 3, e: "Là một dạng bước nhảy đột biến." },
+                { q: "Truyền thông toàn cầu (KTTT) tác động kinh tế (CSHT):", o: ["Quyết định hoàn toàn", "Độc lập", "Tác động trở lại", "Phản ánh thụ động"], a: 2, e: "KTTT tác động trở lại CSHT." },
+                { q: "Chân lý là một quá trình nghĩa là:", o: ["Không đạt được", "Từ tương đối đến tuyệt đối", "Luôn thay đổi", "Riêng từng người"], a: 1, e: "Nhận thức đi từ chân lý tương đối đến tuyệt đối." },
+                { q: "Khác biệt Nhà nước và Xã hội dân sự:", o: ["Quyền lực/Tự nguyện", "Kinh tế/Văn hóa", "Đối lập", "Không phân biệt"], a: 0, e: "Nhà nước mang tính cưỡng chế, xã hội dân sự tự nguyện." },
+                { q: "Quan điểm Mác về con người:", o: ["Sinh học thuần túy", "Lý trí bất biến", "Sản phẩm Thượng đế", "Thống nhất sinh học và xã hội"], a: 3, e: "Con người là thực thể sinh học - xã hội." },
+                { q: "Chủ nghĩa tiêu dùng là biểu hiện của:", o: ["Kinh tế thị trường", "Cá tính", "Sự tha hóa", "Nhu cầu chính đáng"], a: 2, e: "Sự tha hóa của con người trước hàng hóa." },
+                { q: "Đàm phán vừa hợp tác vừa đấu tranh là quy luật:", o: ["Mâu thuẫn", "Lượng chất", "Phủ định", "Giá trị"], a: 0, e: "Thống nhất và đấu tranh của các mặt đối lập." },
+                { q: "Kinh tế tri thức vận dụng quan điểm:", o: ["Tồn tại XH quyết định", "Khoa học là LLSX trực tiếp", "Đấu tranh giai cấp", "Vai trò nhà nước"], a: 1, e: "Tri thức trở thành LLSX trực tiếp." },
+                { q: "Tự do theo Mác-Lênin:", o: ["Không tồn tại", "Tuyệt đối", "Nhận thức tất yếu", "Không khác biệt"], a: 2, e: "Tự do là nhận thức được cái tất yếu." },
+                { q: "Tôn giáo là thuốc phiện của nhân dân nghĩa là:", o: ["Kêu gọi xóa bỏ", "Phủ nhận giá trị", "Khẳng định người xấu", "Xoa dịu nỗi đau, cam chịu"], a: 3, e: "Chức năng đền bù hư ảo." },
+                { q: "Tiền đề lý luận giúp Mác khắc phục duy tâm của Hêghen:", o: ["Phoiơbắc", "Kinh tế Anh", "CNXH Pháp", "Khoa học tự nhiên"], a: 0, e: "Chủ nghĩa duy vật của Phoiơbắc." },
+                { q: "Chỉ nhấn mạnh cái chung bỏ qua cái riêng dẫn đến:", o: ["Biệt lập", "Giáo điều", "Chủ quan", "Kinh nghiệm"], a: 1, e: "Tuyệt đối hóa cái chung là giáo điều." },
+                { q: "Vai trò vĩ nhân:", o: ["Phải hành động đúng quy luật", "Duy nhất sáng tạo", "Quần chúng là công cụ", "Không còn vai trò"], a: 0, e: "Lãnh tụ phải nhận thức đúng quy luật." },
+                { q: "Sự kiện Brexit dưới góc độ triết học:", o: ["Ngẫu nhiên", "Phủ định", "Kết quả mâu thuẫn", "Tác động một chiều"], a: 2, e: "Kết quả của các mâu thuẫn nội tại." },
+                { q: "Luận điểm KHÔNG chính xác về giai cấp:", o: ["Phạm trù lịch sử", "Lợi ích đối lập", "Động lực phát triển", "Xã hội hiện đại không còn mâu thuẫn"], a: 3, e: "Mâu thuẫn giai cấp vẫn tồn tại." },
+                { q: "Bản chất thế giới là 'ý niệm tuyệt đối' thuộc:", o: ["DVBC", "DT khách quan", "DT chủ quan", "Nhị nguyên"], a: 1, e: "Hêghen - Duy tâm khách quan." },
+                { q: "Yếu tố KHÔNG thuộc LLSX:", o: ["Người lao động", "Máy móc", "Nguyên vật liệu", "Cổ phiếu"], a: 3, e: "Cổ phiếu thuộc quan hệ sở hữu (QHSX)." },
+                { q: "Lý luận xám xịt, cây đời xanh tươi nghĩa là:", o: ["Phủ nhận lý luận", "Thực tiễn là tiêu chuẩn", "Không liên quan", "Lý luận quyết định"], a: 1, e: "Thực tiễn phong phú hơn lý luận." },
+                { q: "Dữ liệu (data) là tư liệu sản xuất, dẫn đến thay đổi:", o: ["Công cụ", "Ý thức", "Quan hệ sản xuất", "Không thay đổi"], a: 2, e: "Thay đổi đối tượng sở hữu dẫn đến thay đổi QHSX." },
+                { q: "CM 4.0 thay đổi yếu tố nào nhất trong LLSX?", o: ["Đối tượng", "Công cụ và người lao động", "Tri thức", "Kinh nghiệm"], a: 1, e: "Công cụ thông minh và người lao động trí tuệ." },
+                { q: "Quan điểm Mác về đạo đức:", o: ["Nguồn gốc Thượng đế", "Tình cảm cá nhân", "Phản ánh KT, mang tính giai cấp", "Tương đối"], a: 2, e: "Đạo đức phản ánh tồn tại xã hội, có tính giai cấp." },
+                { q: "Hàng rào kỹ thuật (KTTT) bảo hộ sản xuất (CSHT) là:", o: ["Kinh tế quyết định", "KTTT tác động trở lại", "Vi phạm quy luật", "Tự phát"], a: 1, e: "KTTT tác động trở lại CSHT." },
+                { q: "Cái gì tồn tại đều có nguyên nhân... phân biệt cặp phạm trù:", o: ["Bản chất - Hiện tượng", "Nội dung - Hình thức", "Tất nhiên - Ngẫu nhiên", "Nguyên nhân - Khả năng"], a: 3, e: "Phân biệt Nguyên nhân - Kết quả và Khả năng - Hiện thực." },
+                { q: "Mục tiêu cao nhất của CNXH:", o: ["Kinh tế tăng trưởng", "Nhà nước pháp quyền", "Xóa tư hữu", "Giải phóng con người"], a: 3, e: "Giải phóng con người là mục tiêu cao nhất." }
+            ];
 
-        // Đề 3: Tổng hợp 1
-        const EXAM_3 = [
-            { 
-                q: "Chủ nghĩa Mác ra đời vào khoảng thời gian nào?", 
-                o: ["Những năm 30 thế kỷ XIX", "Những năm 40 thế kỷ XIX", "Những năm 50 thế kỷ XIX", "Đầu thế kỷ XX"], 
-                a: 1, 
-                e: "Chủ nghĩa Mác ra đời vào **những năm 40 của thế kỷ XIX**. Đây là thời điểm phương thức sản xuất tư bản chủ nghĩa phát triển mạnh, giai cấp công nhân đã trở thành lực lượng chính trị độc lập và cần lý luận khoa học soi đường." 
-            },
-            { 
-                q: "Quan điểm của Beccơri: 'Vật thể là phức hợp các cảm giác' thuộc trường phái nào?", 
-                o: ["Duy tâm chủ quan", "Duy tâm khách quan", "Duy vật biện chứng", "Nhị nguyên luận"], 
-                a: 0, 
-                e: "Đây là quan điểm điển hình của **Chủ nghĩa duy tâm chủ quan**. Họ cho rằng sự vật không tồn tại khách quan mà chỉ là sự kết hợp của các cảm giác (nhìn thấy, sờ thấy...) của con người. Theo họ: 'Tồn tại tức là được cảm thấy'." 
-            },
-            { 
-                q: "Đối tượng nghiên cứu của Triết học Mác - Lênin là gì?", 
-                o: ["Các quy luật kinh tế", "Thế giới siêu nhiên", "Những quy luật chung nhất của tự nhiên, xã hội và tư duy", "Cấu tạo của vật chất"], 
-                a: 2, 
-                e: "Khác với các khoa học cụ thể (nghiên cứu quy luật riêng của từng lĩnh vực), Triết học Mác - Lênin nghiên cứu những **quy luật chung nhất, phổ biến nhất** chi phối sự vận động và phát triển của cả 3 lĩnh vực: Tự nhiên, Xã hội và Tư duy con người." 
-            }
-        ];
-        while(EXAM_3.length < 50) EXAM_3.push(...EXAM_3.slice(0, 50 - EXAM_3.length));
+            // Đề 3: Tổng hợp 1 (50 câu - Từ DOCX Đề 1 & Đề 2)
+            const EXAM_3 = [
+                { q: "Chủ nghĩa Mác ra đời vào thời gian nào?", o: ["Những năm 30 TK XIX", "Những năm 40 TK XIX", "Những năm 50 TK XIX", "Những năm 20 TK XIX"], a: 1, e: "Những năm 40 thế kỷ XIX." },
+                { q: "Quan điểm 'sự vật là phức hợp cảm giác' là của:", o: ["Duy tâm chủ quan", "Duy tâm khách quan", "Duy vật siêu hình", "Duy vật biện chứng"], a: 0, e: "Beccơri - Duy tâm chủ quan." },
+                { q: "Tiêu chuẩn xác định lập trường thế giới quan:", o: ["Vấn đề giai cấp", "Vấn đề con người", "Vấn đề dân tộc", "Vấn đề cơ bản của triết học"], a: 3, e: "Vấn đề cơ bản của triết học phân định hay trường phái." },
+                { q: "Nguồn gốc ra đời triết học:", o: ["Nhận thức", "Nhận thức và Tự nhiên", "Xã hội", "Nhận thức và Xã hội"], a: 3, e: "Nguồn gốc nhận thức và xã hội." },
+                { q: "Đối tượng của triết học Mác - Lênin:", o: ["Quy luật kinh tế", "Quy luật xã hội", "Quy luật chung nhất TN, XH, Tư duy", "Quy luật chính trị"], a: 2, e: "Nghiên cứu quy luật chung nhất." },
+                { q: "Ba hình thức cơ bản của CNDV:", o: ["Chất phác, Kinh tế, Tầm thường", "Chất phác, Siêu hình, Biện chứng", "Chất phác, Tầm thường, Biện chứng", "Kinh tế, Siêu hình, Biện chứng"], a: 1, e: "3 hình thức: Chất phác, Siêu hình, Biện chứng." },
+                { q: "Mặt thứ nhất vấn đề cơ bản của triết học:", o: ["Khả năng nhận thức", "Vật chất - Ý thức cái nào có trước", "Ý thức quyết định", "Song song tồn tại"], a: 1, e: "Bản thể luận: Cái nào có trước." },
+                { q: "Mặt thứ hai vấn đề cơ bản của triết học:", o: ["Khả năng nhận thức", "Bản chất thế giới", "Ý thức quyết định", "Song song tồn tại"], a: 0, e: "Nhận thức luận: Có nhận thức được không." },
+                { q: "Thế giới quan bao gồm:", o: ["Tri thức", "Niềm tin", "Lý tưởng", "Tất cả"], a: 3, e: "Tri thức, niềm tin, lý tưởng." },
+                { q: "Hạt nhân của thế giới quan:", o: ["Quan điểm chính trị", "Quan điểm triết học", "Quan điểm mỹ học", "Cả 3"], a: 1, e: "Triết học là hạt nhân lý luận." },
+                { q: "Câu 'Không ai tắm hai lần trên một dòng sông' của ai?", o: ["Talet", "Đêmôcrít", "Hêraclít", "Xôcrát"], a: 2, e: "Hêraclít." },
+                { q: "Vận động của phân tử, điện tử thuộc hình thức nào?", o: ["Cơ học", "Vật lý", "Hóa học", "Sinh học"], a: 1, e: "Vận động vật lý." },
+                { q: "Theo Mác-Lênin, thời gian là:", o: ["Do Chúa tạo ra", "Gắn với vật chất vận động", "Hình thức tồn tại độ dài diễn biến", "Do cảm giác"], a: 2, e: "Thời gian là hình thức tồn tại xét về độ dài." },
+                { q: "Quan điểm CNDV biện chứng về VC và YT:", o: ["YT quyết định VC", "VC quyết định, YT tác động lại", "YT thay đổi thì VC đổi", "YT tự làm thay đổi VC"], a: 1, e: "Vật chất quyết định, ý thức tác động trở lại." },
+                { q: "Đặc trưng bệnh chủ quan duy ý chí:", o: ["Coi VC quyết định", "Tôn trọng quy luật", "Tuyệt đối hóa ý thức", "Tuyệt đối hóa thực tiễn"], a: 2, e: "Tuyệt đối hóa vai trò chủ quan." },
+                { q: "Nguồn gốc tự nhiên của ý thức:", o: ["Bộ não", "Bộ não và thế giới khách quan", "Lao động", "Lao động và ngôn ngữ"], a: 1, e: "Bộ não và thế giới khách quan." },
+                { q: "Sai lầm của CNDV trước Mác về vật chất:", o: ["Đồng nhất với ý thức", "Đồng nhất với dạng cụ thể", "Cho là tồn tại khách quan", "Do Chúa sinh ra"], a: 1, e: "Đồng nhất vật chất với vật thể." },
+                { q: "Thuộc tính cơ bản nhất của vật chất:", o: ["Khối lượng", "Nguyên tử", "Tồn tại khách quan", "Lệ thuộc cảm giác"], a: 2, e: "Tồn tại khách quan." },
+                { q: "Vận động là:", o: ["Phổ biến", "Tự thân", "Cú hích", "Thuộc tính cố hữu"], a: 3, e: "Thuộc tính cố hữu." },
+                { q: "Không gian và thời gian:", o: ["Chủ quan", "Hình thức tồn tại của vật chất", "Quảng tính", "Độ dài"], a: 1, e: "Hình thức tồn tại của vật chất." },
+                { q: "Phát triển là:", o: ["Có tính kế thừa", "Không kế thừa", "Kế thừa nguyên xi", "Chỉ thay đổi lượng"], a: 0, e: "Kế thừa biện chứng." },
+                { q: "Phạm trù chỉ mối liên hệ bản chất, tất yếu:", o: ["Ngẫu nhiên", "Nguyên nhân", "Tất nhiên", "Hiện thực"], a: 2, e: "Tất nhiên." },
+                { q: "Mâu thuẫn tồn tại ở đâu?", o: ["Tự nhiên, xã hội, tư duy", "Chỉ tự nhiên", "Chỉ xã hội", "Chỉ tư duy"], a: 0, e: "Mọi nơi." },
+                { q: "Hình thức thực tiễn cơ bản nhất?", o: ["Thực nghiệm", "Chính trị", "Sản xuất vật chất", "Đấu tranh giai cấp"], a: 2, e: "Sản xuất vật chất." },
+                { q: "Nhận thức cảm tính và lý tính:", o: ["Thống nhất", "Không liên hệ", "Bổ sung nhau", "Liên hệ chặt chẽ"], a: 3, e: "Liên hệ chặt chẽ." },
+                { q: "Chân lý là quá trình nghĩa là:", o: ["Không đạt được", "Từ tương đối đến tuyệt đối", "Luôn thay đổi", "Riêng từng người"], a: 1, e: "Từ tương đối đến tuyệt đối." },
+                { q: "Thực tiễn là cơ sở nhận thức vì:", o: ["Cung cấp công cụ", "Cung cấp dữ liệu, đặt ra nhu cầu", "Xác minh đúng sai", "Phục vụ thực tiễn"], a: 1, e: "Cung cấp dữ liệu, đặt ra nhu cầu." },
+                { q: "QHSX trở thành xiềng xích khi:", o: ["Mới ra đời", "Vượt trước", "Lạc hậu", "Cả B và C"], a: 3, e: "Lạc hậu hoặc vượt trước." },
+                { q: "Nhà nước trong KTTT:", o: ["Công cụ quyền lực", "Duy nhất tác động lại CSHT", "Quản lý xã hội", "Thể chế hóa tư tưởng"], a: 0, e: "Công cụ quyền lực đặc biệt." },
+                { q: "Yếu tố quyết định tồn tại xã hội:", o: ["Tự nhiên", "Phương thức sản xuất", "Vĩ nhân", "Đấu tranh giai cấp"], a: 1, e: "Phương thức sản xuất." },
+                { q: "CM 4.0 tác động mạnh nhất đến:", o: ["LLSX", "QHSX", "CSHT", "KTTT"], a: 0, e: "Lực lượng sản xuất." },
+                { q: "Lịch sử lặp lại là quan điểm:", o: ["Biện chứng", "Siêu hình", "Duy tâm chủ quan", "Duy tâm khách quan"], a: 1, e: "Siêu hình (vòng tròn khép kín)." },
+                { q: "Phạm trù triết học là:", o: ["Khái niệm tự đặt", "Chỉ trong tư duy", "Khái niệm chung nhất", "Lỗi thời"], a: 2, e: "Khái niệm chung nhất." },
+                { q: "Tính độc lập tương đối của ý thức xã hội:", o: ["Quyết định tồn tại", "Vĩnh viễn", "Tác động trở lại", "Phản ánh chính xác"], a: 2, e: "Tác động trở lại." },
+                { q: "Khác biệt đấu tranh giai cấp và xung đột xã hội:", o: ["Kinh tế/Mọi lĩnh vực", "Bạo lực/Ôn hòa", "Đối kháng lợi ích/Rộng hơn", "Không khác"], a: 2, e: "Đấu tranh giai cấp do đối kháng lợi ích." },
+                { q: "Giải phóng con người triệt để cần:", o: ["Nâng cao dân trí", "Nhà nước pháp quyền", "Xóa tư hữu", "Khoa học"], a: 2, e: "Xóa bỏ chế độ tư hữu." },
+                { q: "Con người là thực thể sinh học - xã hội:", o: ["Vừa tự nhiên vừa xã hội", "Tách biệt", "Xã hội quyết định", "Sinh học là bản chất"], a: 0, e: "Thống nhất 2 mặt." },
+                { q: "Khác biệt dân chủ vô sản và tư sản:", o: ["Gián tiếp/Trực tiếp", "Thiểu số/Đa số", "Chính trị", "Quyền con người"], a: 1, e: "Dân chủ cho đa số." },
+                { q: "Nhà nước XHCN là nửa nhà nước vì:", o: ["Vừa trấn áp vừa tự tiêu vong", "Chuyên chính", "Của công nhân", "Ngắn hạn"], a: 0, e: "Xu hướng tự tiêu vong." },
+                { q: "Phân phối trong CN cộng sản:", o: ["Nhu cầu", "Lao động", "Bình quân", "Vốn"], a: 0, e: "Làm theo năng lực, hưởng theo nhu cầu." },
+                { q: "Chủ nghĩa giáo điều là:", o: ["Coi thường lý luận", "Phủ nhận quy luật", "Áp dụng rập khuôn", "Hoài nghi"], a: 2, e: "Áp dụng máy móc." },
+                { q: "Trực quan sinh động là:", o: ["Lý tính", "Cảm tính", "Kinh nghiệm", "Toàn bộ"], a: 1, e: "Nhận thức cảm tính." },
+                { q: "Cái đẹp trong mắt kẻ si tình:", o: ["DVBC", "DT khách quan", "DT chủ quan", "DV siêu hình"], a: 2, e: "Duy tâm chủ quan (phụ thuộc cảm giác)." },
+                { q: "AI thay thế ý thức con người?", o: ["Có", "Có vì tư duy", "Không", "Không vì kiểm soát"], a: 2, e: "Không, vì thiếu bản chất xã hội." },
+                { q: "Không phải tiền đề KHTN của triết học Mác:", o: ["Tiến hóa", "Tế bào", "Tương đối", "Bảo toàn năng lượng"], a: 2, e: "Thuyết tương đối (Einstein) ra đời sau." },
+                { q: "Bộ phận hạt nhân của CN Mác-Lênin:", o: ["Triết học", "Kinh tế", "CNXH khoa học", "Ngang nhau"], a: 0, e: "Triết học là hạt nhân thế giới quan." },
+                { q: "Đốt cháy giai đoạn là:", o: ["Hữu khuynh", "Tả khuynh", "Thực dụng", "Giáo điều"], a: 1, e: "Tả khuynh (nôn nóng)." },
+                { q: "Nguyên nhân - Kết quả chuyển hóa:", o: ["Trong quan hệ khác nhau", "Đồng nhất", "Kết quả là nguyên nhân", "Không phân biệt"], a: 0, e: "Đổi chỗ trong các quan hệ khác nhau." },
+                { q: "Tuyên ngôn Đảng Cộng sản đánh dấu:", o: ["Triết học Mác", "Kinh tế Mác", "CNXH khoa học", "Chủ nghĩa Mác"], a: 3, e: "Sự hình thành chủ nghĩa Mác." },
+                { q: "Bản chất của thế giới là:", o: ["Vật chất", "Ý thức", "Vừa VC vừa YT", "Nguyên tử"], a: 0, e: "Vật chất." }
+            ];
 
-        // Đề 4: Tổng hợp 2
-        const EXAM_4 = [
-            { 
-                q: "Ba hình thức cơ bản của phép biện chứng trong lịch sử là:", 
-                o: ["Chất phác, Duy tâm, Duy vật", "Cổ đại, Trung cổ, Hiện đại", "Chủ quan, Khách quan, Khoa học", "Siêu hình, Biện chứng, Tự phát"], 
-                a: 0, 
-                e: "Lịch sử phép biện chứng trải qua 3 hình thức: 1. **PBC Chất phác** (thời Cổ đại - trực kiến thiên tài); 2. **PBC Duy tâm** (Cổ điển Đức/Hêghen - biện chứng của ý niệm); 3. **PBC Duy vật** (Mác-Lênin - hình thức cao nhất, khoa học nhất)." 
-            },
-            { 
-                q: "Đâu là ba hình thức phát triển của Chủ nghĩa duy vật?", 
-                o: ["Chất phác, Siêu hình, Biện chứng", "Cổ đại, Cận đại, Hiện đại", "Ngây thơ, Máy móc, Lịch sử", "Tự nhiên, Xã hội, Tư duy"], 
-                a: 0, 
-                e: "Chủ nghĩa duy vật phát triển qua 3 nấc thang: 1. **CNDV Chất phác** (ngây thơ thời cổ đại); 2. **CNDV Siêu hình** (máy móc thế kỷ XV-XVIII); 3. **CNDV Biện chứng** (Mác - Lênin sáng lập, khắc phục hạn chế của 2 hình thức trước)." 
-            }
-        ];
-        while(EXAM_4.length < 50) EXAM_4.push(...EXAM_4.slice(0, 50 - EXAM_4.length));
-
+            // Đề 4: Tổng hợp 2 (50 câu - Từ DOCX HUST + Chương 3)
+            const EXAM_4 = [
+                { q: "Định nghĩa vật chất của Lênin khắc phục hạn chế gì?", o: ["Quy về dạng cụ thể", "Phủ nhận vật chất", "Duy tâm", "Siêu hình"], a: 0, e: "Khắc phục việc đồng nhất vật chất với vật thể." },
+                { q: "KHTN cuối TK 19 đầu 20 tác động gì?", o: ["Vật chất không tồn tại", "Củng cố duy vật cũ", "Khủng hoảng vật lý", "Khẳng định DVBC"], a: 2, e: "Gây ra cuộc khủng hoảng vật lý học." },
+                { q: "Đứng im là tương đối nghĩa là:", o: ["Ảo giác", "Tạm thời", "Cân bằng", "Trạng thái đặc biệt"], a: 3, e: "Trạng thái đặc biệt của vận động." },
+                { q: "Kỹ sư tính toán vật liệu thể hiện nguyên tắc:", o: ["Toàn diện", "Phát triển", "Lịch sử cụ thể", "Thực tiễn"], a: 3, e: "Xuất phát từ thực tế khách quan." },
+                { q: "Khác biệt Cái riêng và Cái đơn nhất:", o: ["Sự vật/Thuộc tính", "Lặp lại/Duy nhất", "Chứa cái chung/Chỉ có ở 1 vật", "Đồng nghĩa"], a: 2, e: "Cái đơn nhất chỉ có ở một sự vật." },
+                { q: "Quy luật phủ định của phủ định chỉ ra:", o: ["Kết quả", "Khuynh hướng", "Tốc độ", "Điều kiện"], a: 1, e: "Khuynh hướng đi lên." },
+                { q: "Chân lý là quá trình nghĩa là:", o: ["Thay đổi", "Trong tư duy", "Tương đối đến tuyệt đối", "Vận động"], a: 2, e: "Đi từ tương đối đến tuyệt đối." },
+                { q: "Thực tiễn là động lực nhận thức vì:", o: ["Cung cấp công cụ", "Đặt ra nhu cầu", "Xác minh", "Phục vụ"], a: 1, e: "Đặt ra nhu cầu, nhiệm vụ." },
+                { q: "QHSX kìm hãm LLSX khi:", o: ["Mới ra đời", "Vượt trước", "Lạc hậu", "Cả B và C"], a: 3, e: "Lạc hậu hoặc vượt trước." },
+                { q: "Nhà nước trong KTTT:", o: ["Công cụ quyền lực", "Duy nhất tác động", "Quản lý", "Thể chế hóa"], a: 0, e: "Công cụ quyền lực đặc biệt." },
+                { q: "Yếu tố quyết định tồn tại xã hội:", o: ["Tự nhiên", "Phương thức sản xuất", "Vĩ nhân", "Đấu tranh giai cấp"], a: 1, e: "Phương thức sản xuất." },
+                { q: "CM 4.0 tác động mạnh nhất đến:", o: ["LLSX", "QHSX", "CSHT", "KTTT"], a: 0, e: "Lực lượng sản xuất." },
+                { q: "Lịch sử lặp lại là quan điểm:", o: ["Biện chứng", "Siêu hình", "Duy tâm chủ quan", "Duy tâm khách quan"], a: 1, e: "Siêu hình (vòng tròn)." },
+                { q: "Phạm trù triết học là:", o: ["Tự đặt", "Tư duy", "Khái niệm chung nhất", "Lỗi thời"], a: 2, e: "Phản ánh mối liên hệ phổ biến nhất." },
+                { q: "Tính độc lập của ý thức xã hội:", o: ["Quyết định", "Vĩnh viễn", "Tác động trở lại", "Phản ánh đúng"], a: 2, e: "Tác động trở lại." },
+                { q: "Khác biệt đấu tranh giai cấp và xung đột xã hội:", o: ["Kinh tế/Mọi lĩnh vực", "Bạo lực/Ôn hòa", "Đối kháng lợi ích/Rộng hơn", "Không khác"], a: 2, e: "Đấu tranh giai cấp do đối kháng lợi ích." },
+                { q: "Giải phóng con người triệt để cần:", o: ["Nâng cao dân trí", "Pháp quyền", "Xóa tư hữu", "Khoa học"], a: 2, e: "Xóa bỏ chế độ tư hữu." },
+                { q: "Con người là thực thể sinh học - xã hội:", o: ["Thống nhất", "Tách biệt", "Xã hội quyết định", "Sinh học bản chất"], a: 0, e: "Thống nhất biện chứng." },
+                { q: "Khác biệt dân chủ vô sản và tư sản:", o: ["Gián tiếp/Trực tiếp", "Thiểu số/Đa số", "Chính trị", "Quyền con người"], a: 1, e: "Dân chủ cho đa số." },
+                { q: "Nhà nước XHCN là nửa nhà nước vì:", o: ["Tự tiêu vong", "Chuyên chính", "Của công nhân", "Ngắn hạn"], a: 0, e: "Xu hướng tự tiêu vong." },
+                { q: "Phân phối trong CN cộng sản:", o: ["Nhu cầu", "Lao động", "Bình quân", "Vốn"], a: 0, e: "Làm theo năng lực, hưởng theo nhu cầu." },
+                { q: "Chủ nghĩa giáo điều là:", o: ["Coi thường lý luận", "Phủ nhận quy luật", "Áp dụng rập khuôn", "Hoài nghi"], a: 2, e: "Áp dụng máy móc." },
+                { q: "Trực quan sinh động là:", o: ["Lý tính", "Cảm tính", "Kinh nghiệm", "Toàn bộ"], a: 1, e: "Nhận thức cảm tính." },
+                { q: "Cái đẹp trong mắt kẻ si tình:", o: ["DVBC", "DT khách quan", "DT chủ quan", "DV siêu hình"], a: 2, e: "Duy tâm chủ quan." },
+                { q: "AI thay thế ý thức con người?", o: ["Có", "Có vì tư duy", "Không", "Không vì kiểm soát"], a: 2, e: "Không, vì thiếu bản chất xã hội." },
+                { q: "Không phải tiền đề KHTN của triết học Mác:", o: ["Tiến hóa", "Tế bào", "Tương đối", "Bảo toàn năng lượng"], a: 2, e: "Thuyết tương đối ra đời sau." },
+                { q: "Bộ phận hạt nhân của CN Mác-Lênin:", o: ["Triết học", "Kinh tế", "CNXH khoa học", "Ngang nhau"], a: 0, e: "Triết học." },
+                { q: "Đốt cháy giai đoạn là:", o: ["Hữu khuynh", "Tả khuynh", "Thực dụng", "Giáo điều"], a: 1, e: "Tả khuynh." },
+                { q: "Nguyên nhân - Kết quả chuyển hóa:", o: ["Trong quan hệ khác nhau", "Đồng nhất", "Kết quả là nguyên nhân", "Không phân biệt"], a: 0, e: "Đổi chỗ trong các quan hệ khác nhau." },
+                { q: "Tuyên ngôn Đảng Cộng sản đánh dấu:", o: ["Triết học Mác", "Kinh tế Mác", "CNXH khoa học", "Chủ nghĩa Mác"], a: 3, e: "Sự hình thành chủ nghĩa Mác." },
+                { q: "Vật chất là:", o: ["Thực tại khách quan", "Cảm giác", "Ý niệm", "Nguyên tử"], a: 0, e: "Thực tại khách quan." },
+                { q: "Ý thức là:", o: ["Hình ảnh chủ quan", "Vật chất", "Thần linh", "Não bộ"], a: 0, e: "Hình ảnh chủ quan của thế giới khách quan." },
+                { q: "Mối liên hệ phổ biến là:", o: ["Khách quan", "Chủ quan", "Ngẫu nhiên", "Thần thánh"], a: 0, e: "Khách quan, phổ biến." },
+                { q: "Phát triển là:", o: ["Đi lên", "Vòng tròn", "Thụt lùi", "Tăng lượng"], a: 0, e: "Khuynh hướng đi lên." },
+                { q: "Chất là:", o: ["Tính quy định khách quan", "Số lượng", "Cảm giác", "Bên ngoài"], a: 0, e: "Tính quy định khách quan vốn có." },
+                { q: "Lượng là:", o: ["Con số, quy mô", "Bản chất", "Kết cấu", "Phương thức"], a: 0, e: "Quy mô, trình độ." },
+                { q: "Mâu thuẫn là:", o: ["Thống nhất và đấu tranh", "Chỉ đấu tranh", "Chỉ thống nhất", "Hòa hợp"], a: 0, e: "Thống nhất và đấu tranh của các mặt đối lập." },
+                { q: "Phủ định biện chứng là:", o: ["Tự phủ định", "Bác bỏ", "Xóa bỏ", "Phủ định sạch trơn"], a: 0, e: "Sự tự phủ định." },
+                { q: "Thực tiễn là:", o: ["Hoạt động vật chất", "Hoạt động tinh thần", "Tư duy", "Lý thuyết"], a: 0, e: "Hoạt động vật chất cảm tính." },
+                { q: "Chân lý là:", o: ["Tri thức đúng", "Ý kiến số đông", "Quyền lực", "Lợi ích"], a: 0, e: "Tri thức phù hợp hiện thực." },
+                { q: "Sản xuất vật chất là:", o: ["Cơ sở xã hội", "Hoạt động vui chơi", "Nghiên cứu khoa học", "Chính trị"], a: 0, e: "Cơ sở của sự tồn tại xã hội." },
+                { q: "LLSX gồm:", o: ["Người lao động và TLSX", "Công nhân và máy móc", "Con người và tự nhiên", "Vốn và công nghệ"], a: 0, e: "Người lao động và tư liệu sản xuất." },
+                { q: "QHSX gồm:", o: ["Sở hữu, tổ chức, phân phối", "Chủ và thợ", "Mua và bán", "Sản xuất và tiêu dùng"], a: 0, e: "Sở hữu, tổ chức quản lý, phân phối." },
+                { q: "CSHT là:", o: ["Toàn bộ QHSX", "Đường xá cầu cống", "Điện nước", "Kinh tế nhà nước"], a: 0, e: "Toàn bộ quan hệ sản xuất." },
+                { q: "KTTT là:", o: ["Quan điểm và thiết chế", "Nhà cao tầng", "Bộ máy nhà nước", "Đảng phái"], a: 0, e: "Quan điểm tư tưởng và thiết chế tương ứng." },
+                { q: "Giai cấp là:", o: ["Tập đoàn người", "Nghề nghiệp", "Chức vụ", "Thu nhập"], a: 0, e: "Tập đoàn người khác nhau về địa vị kinh tế." },
+                { q: "Nhà nước là:", o: ["Công cụ thống trị", "Tổ chức xã hội", "Cơ quan từ thiện", "Trọng tài"], a: 0, e: "Công cụ chuyên chính giai cấp." },
+                { q: "Tồn tại xã hội quyết định:", o: ["Ý thức xã hội", "Pháp luật", "Nhà nước", "Văn hóa"], a: 0, e: "Ý thức xã hội." },
+                { q: "Con người là:", o: ["Tổng hòa QHXH", "Động vật", "Thần thánh", "Cỗ máy"], a: 0, e: "Tổng hòa các quan hệ xã hội." },
+                { q: "Quần chúng nhân dân là:", o: ["Người sáng tạo lịch sử", "Đám đông", "Dân thường", "Người bị trị"], a: 0, e: "Chủ thể sáng tạo chân chính." }
+            ];
         const EXAMS = [EXAM_1, EXAM_2, EXAM_3, EXAM_4];
 
        //TL
@@ -1248,4 +1330,3 @@
  </script>
 </body>
 </html>
-
