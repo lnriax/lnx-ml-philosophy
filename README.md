@@ -1,4 +1,4 @@
 - Wa mệt mỏi!!
-- Bạn có thể truy cập và sử dụng trang web tại đây: **[Triết học Mác-Lênin](https://lnriax.github.io/Pilosophos-CT100216/)**
+- Bạn có thể truy cập và sử dụng trang web tại đây: **[Triết học Mác-Lênin](https://lnriax.github.io/lnx-ml-philosophy/)**
 - ((～￣▽￣)～
 - Jingliu :33 
